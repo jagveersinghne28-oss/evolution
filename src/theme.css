@@ -1,0 +1,27 @@
+:root {
+  /* core color palette */
+  --color-primary: #082b51;      /* deep blue used for headers/buttons */
+  --color-secondary: #E9A616;    /* brand dot / highlight */
+  --color-bg: #f7f7fb;
+  --color-card: #F6F6F6;
+  --color-muted: #6b7280;
+  --color-accent: #ffc107;
+  --color-dark-bg: #032b53;
+  --color-light-bg: #fff8f0;
+
+
+/* text variations */
+--color-text: #111827;
+--color-text-inverse: #ffffff;
+
+/* spacing variables could also go here if desired */
+--spacing-sm: 8px;
+--spacing-md: 16px;
+--spacing-lg: 24px;
+
+/* Usage example (in other CSS files):
+   background: var(--color-primary);
+   color: var(--color-text);
+   border-color: var(--color-secondary);
+ */
+}
