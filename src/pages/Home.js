@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
-import { ICONS, Industries } from '../utils/constants';  // Fixed import to use 'Industries' instead of 'icons'
+import { ICONS, Industries } from '../utils/constants';
 
 function Stat({num, label}){
   return (
@@ -20,8 +21,8 @@ export default function Home(){
             <br/>talent solutions.</h1>
           <p style={{color:'#6b7280',maxWidth:720,margin:'18px auto'}}>Evolution Management Services connects top multilingual talent with leading organizations across India. Based in New Delhi, we specialize in building teams that drive success.</p>
           <div style={{display:'flex',gap:16,justifyContent:'center',marginTop:18}}>
-            <button className="btn-primary">Find your next role</button>
-            <button className="btn-outline">Hire talent</button>
+            <Link to="/job-seekers" style={{textDecoration:'none'}}><button className="btn-primary">Find your next role</button></Link>
+            <Link to="/employers" style={{textDecoration:'none'}}><button className="btn-outline">Hire talent</button></Link>
           </div>
         </div>
       </section>
@@ -59,7 +60,7 @@ export default function Home(){
           </div>
 
           <div style={{marginTop:18}}>
-            <button className="btn-outline">View all services</button>
+            <Link to="/services" style={{textDecoration:'none'}}><button className="btn-outline">View all services</button></Link>
           </div>
         </div>
       </section>
@@ -71,9 +72,9 @@ export default function Home(){
 
           <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap',marginTop:18}}>
             {['IT & technology','Banking & Finance','Retail','Security'].map((t)=> (
-              <div style={{background:'#fff', borderRadius:6,padding:8, boxShadow:'0 1px 0 rgba(16,24,40,0.03)', minWidth:200, display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', border: '1px solid #BEBEBE'}}>
+              <div key={t} style={{background:'#fff', borderRadius:6,padding:8, boxShadow:'0 1px 0 rgba(16,24,40,0.03)', minWidth:200, display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', border: '1px solid #BEBEBE'}}>
               <img src={Industries[t]} alt={t} style={{width:20, height:20}} />
-              <div key={t} style={{fontWeight:700, color:'#082b51', marginTop:6}}>{t}</div>
+              <div style={{fontWeight:700, color:'#082b51', marginTop:6}}>{t}</div>
               </div>
             ))}
           </div>
@@ -86,7 +87,7 @@ export default function Home(){
             <h2 style={{margin:0, color:'rgba(255,255,255,0.9)',fontWeight:700, fontSize:'2rem'}}>Ready to Transform your Workforce?</h2>
             <p style={{color:'rgba(255,255,255,0.9)'}}>Whether you're looking for your next career opportunity or seeking top talent for your organization, we're here to help.</p>
             <div style={{marginTop:12}}>
-              <button  style={{background: '#ffffff', borderRadius: '16px', color: '#00000', fontSize: '1rem', padding: '8px 16px'}}>Contact us Today</button>
+              <Link to="/contact" style={{textDecoration:'none'}}><button style={{background: '#ffffff', borderRadius: '16px', color: '#000', fontSize: '1rem', padding: '12px 24px', fontWeight:600, border:'none', cursor:'pointer'}}>Contact us Today</button></Link>
             </div>
           </div>
         </div>

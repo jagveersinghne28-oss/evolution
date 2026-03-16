@@ -3,7 +3,7 @@
   --color-primary: #082b51;      /* deep blue used for headers/buttons */
   --color-secondary: #E9A616;    /* brand dot / highlight */
   --color-bg: #f7f7fb;
-  --color-card: #F6F6F6;
+  --color-card: #ffffff;
   --color-muted: #6b7280;
   --color-accent: #ffc107;
   --color-dark-bg: #032b53;
@@ -24,4 +24,268 @@
    color: var(--color-text);
    border-color: var(--color-secondary);
  */
+
+/* Transitions */
+--transition-fast: 150ms ease-in-out;
+--transition-base: 300ms ease-in-out;
+--transition-slow: 500ms ease-in-out;
+}
+
+/* Smooth page transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Apply animations to sections */
+section {
+  animation: fadeIn var(--transition-base);
+}
+
+/* Smooth button transitions */
+button {
+  transition: all var(--transition-fast);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Link animations */
+a {
+  transition: color var(--transition-fast);
+}
+
+/* Card hover effects */
+.snapshot-card {
+  transition: all var(--transition-base);
+}
+
+.snapshot-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Input animations */
+input, textarea, select {
+  transition: all var(--transition-fast);
+  border-color: #d1d5db;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(8, 43, 81, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Icon wrapper animations */
+.icon-wrapper {
+  transition: all var(--transition-base);
+  background: #ffebc0;
+}
+
+.snapshot-card:hover .icon-wrapper {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* Nav link animations */
+.nav a {
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav a::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width var(--transition-fast);
+}
+
+.nav a:hover::before {
+  width: 100%;
+}
+
+/* Drawer animation */
+.drawer-panel {
+  animation: slideInRight var(--transition-base);
+}
+
+.drawer-backdrop {
+  animation: fadeIn var(--transition-fast);
+}
+
+/* Form animations */
+form {
+  animation: slideUp var(--transition-base);
+}
+
+form input,
+form textarea {
+  animation: scaleIn var(--transition-slow);
+}
+
+form input:nth-child(1) { animation-delay: 50ms; }
+form input:nth-child(2) { animation-delay: 100ms; }
+form input:nth-child(3) { animation-delay: 150ms; }
+form input:nth-child(4) { animation-delay: 200ms; }
+
+/* Stat counter animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Value card animations */
+.value-card {
+  animation: scaleIn var(--transition-base);
+  transition: all var(--transition-base);
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+  transition: all var(--transition-base);
+}
+
+.value-card:hover .value-icon {
+  transform: scale(1.1);
+  background: rgba(233, 166, 22, 0.3);
+}
+
+/* Feature animations */
+@keyframes slideInWithDelay {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Success message animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+div[role="alert"] {
+  animation: slideDown var(--transition-base);
+}
+
+/* Loading state animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Footer animations */
+footer a {
+  transition: color var(--transition-fast);
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* Brand dot animation */
+.brand-dot {
+  transition: all var(--transition-base);
+  animation: pulse 2s infinite;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
