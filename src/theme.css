@@ -1,7 +1,7 @@
 :root {
   /* core color palette */
-  --color-primary: #082b51;      /* deep blue used for headers/buttons */
-  --color-secondary: #E9A616;    /* brand dot / highlight */
+  --color-primary: #082b51; /* deep blue used for headers/buttons */
+  --color-secondary: #e9a616; /* brand dot / highlight */
   --color-bg: #f7f7fb;
   --color-card: #ffffff;
   --color-muted: #6b7280;
@@ -9,26 +9,25 @@
   --color-dark-bg: #032b53;
   --color-light-bg: #fff8f0;
 
+  /* text variations */
+  --color-text: #111827;
+  --color-text-inverse: #ffffff;
 
-/* text variations */
---color-text: #111827;
---color-text-inverse: #ffffff;
+  /* spacing variables could also go here if desired */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
 
-/* spacing variables could also go here if desired */
---spacing-sm: 8px;
---spacing-md: 16px;
---spacing-lg: 24px;
-
-/* Usage example (in other CSS files):
+  /* Usage example (in other CSS files):
    background: var(--color-primary);
    color: var(--color-text);
    border-color: var(--color-secondary);
  */
 
-/* Transitions */
---transition-fast: 150ms ease-in-out;
---transition-base: 300ms ease-in-out;
---transition-slow: 500ms ease-in-out;
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
 }
 
 /* Smooth page transitions */
@@ -88,7 +87,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -131,12 +131,16 @@ a {
 }
 
 /* Input animations */
-input, textarea, select {
+input,
+textarea,
+select {
   transition: all var(--transition-fast);
   border-color: #d1d5db;
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(8, 43, 81, 0.1);
@@ -160,7 +164,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .nav a::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -193,10 +197,18 @@ form textarea {
   animation: scaleIn var(--transition-slow);
 }
 
-form input:nth-child(1) { animation-delay: 50ms; }
-form input:nth-child(2) { animation-delay: 100ms; }
-form input:nth-child(3) { animation-delay: 150ms; }
-form input:nth-child(4) { animation-delay: 200ms; }
+form input:nth-child(1) {
+  animation-delay: 50ms;
+}
+form input:nth-child(2) {
+  animation-delay: 100ms;
+}
+form input:nth-child(3) {
+  animation-delay: 150ms;
+}
+form input:nth-child(4) {
+  animation-delay: 200ms;
+}
 
 /* Stat counter animation */
 @keyframes countUp {
@@ -288,4 +300,8 @@ footer a:hover {
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+.ant-select-selector {
+  border: none !important;
 }
